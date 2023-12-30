@@ -172,10 +172,10 @@ class PassGenerator
      *
      * @return void
      */
-    public function addAsset($assetPath)
+    public function addAsset($assetPath, $fileName = null)
     {
         if (is_file($assetPath)) {
-            $this->assets[basename($assetPath)] = $assetPath;
+            $this->assets[$fileName ?: basename($assetPath)] = $assetPath;
 
             return;
         }
